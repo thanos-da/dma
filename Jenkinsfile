@@ -112,7 +112,7 @@ all:
             sh 'cat inventory.yml'
 
             // Run playbook with verbose output for debugging
-            sh "ansible-playbook -i inventory.yml -vv ${ANSIBLE_DIR}/deploy.yml"
+            sh "ansible-playbook -i inventory.yml -vv ${ANSIBLE_DIR}/deploy_DMA.yml"
           }
         }
       }
