@@ -2,6 +2,7 @@ provider "aws" {
   region = var.aws_region
 }
 
+# Get the Latest AMI ID
 data "aws_ami" "ubuntu_24_04" {
   most_recent = true
 
@@ -15,7 +16,22 @@ data "aws_ami" "ubuntu_24_04" {
     values = ["hvm"]
   }
 
-  owners = ["099720109477"] # Canonical (official Ubuntu images)
+  owners = ["099720109477"]
+}
+
+# Use the Existing VPC ID
+data "aws_vpc" "existing" {
+  id = var.existing_vpc_id
+}
+
+# Use the Existing subnet
+data "aws_subnet" "existing" {
+  id = var.existing_subnet_id
+}
+
+# Use the existing security group
+data "aws_security_group" "existing" {
+  id = var.existing_security_group_id
 }
 
 resource "aws_instance" "DMA_app" {
