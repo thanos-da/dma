@@ -2,7 +2,7 @@ provider "aws" {
   region = var.aws_region
 }
 
-resource "aws_instance" "rails_app" {
+resource "aws_instance" "DMA_app" {
   ami                    = var.ami_id
   instance_type          = var.instance_type
   availability_zone      = var.availability_zone
@@ -17,7 +17,7 @@ resource "aws_instance" "rails_app" {
   }
 
   tags = {
-    Name = "Report Builder"
+    Name = "DMA_Application"
   }
 }
 
