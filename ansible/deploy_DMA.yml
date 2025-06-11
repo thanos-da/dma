@@ -58,13 +58,6 @@
         line: 'PasswordAuthentication no'
         state: present
         backup: yes
-      #notify: Restart sshd
-
-  #handlers:
-    #- name: restart sshd
-      #service:
-       # name: sshd
-        #state: restarted
         
 - name: Install Ruby 3.0.0 with RVM and custom OpenSSL for existing user 'rpx'
   hosts: rails-server-2
@@ -76,7 +69,7 @@
     openssl_version: "1.1.1w"
     openssl_prefix: "/opt/openssl-1.1"
     ruby_version: "3.0.0"
-    deploy_branch: "RB_2025_05_02_RC"
+    deploy_branch: "dma_data_diagnostics"
     app_path: "/home/rpx/app" 
 
   tasks:
