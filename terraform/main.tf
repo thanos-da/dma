@@ -11,7 +11,7 @@ resource "aws_instance" "DMA_app" {
   key_name               = var.key_name
 
   root_block_device {
-    volume_size = var.vol_size         # Size in GB
+    volume_size = var.vol_size       
     volume_type = var.vol_type  
     delete_on_termination = flase
   }
